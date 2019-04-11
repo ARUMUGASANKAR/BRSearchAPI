@@ -1,0 +1,10 @@
+apiVersion: v1
+name: helm-searchassemblerservice
+version: 1
+description: Applicaition for SearchAssemblerService
+home: https://github.com/DigitalInnovation/SearchAssemblerService.git
+sources:
+  - https://github.com/DigitalInnovation/SearchAssemblerService.git
+maintainers:
+  - name: BloomreachMigration team
+    email: suresh.kolipakula@mnscorp.net
