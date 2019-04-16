@@ -6,7 +6,7 @@ replicas: 1
 replicasMax: 2
 cpuTargetPercentage: 50
 ingress:
-  name: search-assembler-service
+  name: br-search-service
   # This will need to be set at deploy time as it differs from environment to environment
   domain: "prod.platform.mnscorp.net"
   subdomain: platform
