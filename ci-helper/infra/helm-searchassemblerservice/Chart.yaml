@@ -1,10 +1,10 @@
 apiVersion: v1
-name: helm-searchassemblerservice
+name: helm-brsearchservice
 version: 1
-description: Applicaition for SearchAssemblerService
-home: https://github.com/DigitalInnovation/SearchAssemblerService.git
+description: Applicaition for brsearchservice
+home: https://github.com/DigitalInnovation/BRSearchAPI.git
 sources:
-  - https://github.com/DigitalInnovation/SearchAssemblerService.git
+  - https://github.com/DigitalInnovation/BRSearchAPI.git
 maintainers:
   - name: BloomreachMigration team
     email: suresh.kolipakula@mnscorp.net
