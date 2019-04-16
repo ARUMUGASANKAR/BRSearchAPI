@@ -83,7 +83,7 @@ def call(isMerge, prNumber, workDir='') {
                     stage='postBuildText'
                     manager.addShortText("${gitTag} - deployed to ${env.ENV_STACK}", "black", "lightgreen", "1px", "grey" )
                     stage='postBuildDescription'
-                    currentBuild.description = "${p.applicationUrl}/SearchAssemblerService <br>docker pull ${p.dockerRegistryUrl.split('/')[2]}/${fullAppTag}"
+                    currentBuild.description = "${p.applicationUrl}/brsearchservice <br>docker pull ${p.dockerRegistryUrl.split('/')[2]}/${fullAppTag}"
 
 
                 }else{
