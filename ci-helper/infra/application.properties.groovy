@@ -18,7 +18,7 @@
   ],
 
   files: [
-            ["target/search-assembler-service.jar", "/search-assembler-service.jar"],
+            ["target/br-search-service.jar", "/br-search-service.jar"],
             ["ci-helper/infra/dockerfiles/app.Dockerfile", "/Dockerfile"]
         ]
 ]
