@@ -24,7 +24,7 @@ def getLastCommitIdInPR(){
 node {
 
     withEnv([
-        'repo=DigitalInnovation/SearchAssemblerService',
+        'repo=DigitalInnovation/BRSearchAPI',
         'githubTokenId=su-bloomreachmigration-secret-token',
         'vaultUrl=https://vault.platform.mnscorp.net',        
         'vaultNexusSecretDataPath=infrastructure/teams/bloomreachmigration/prod/',
