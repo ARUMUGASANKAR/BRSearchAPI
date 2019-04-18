@@ -4,10 +4,11 @@ metadata:
   name: {{ template "fullname" . }}
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ template "fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    app: {{ $.Release.Name }}
+    component: {{ $.Release.Name }}
+    chart: {{ $.Chart.Name }}-{{ $.Chart.Version }}
+    release: {{ $.Release.Name }}
+    heritage: {{ $.Release.Service | quote }}
 spec:
   replicas: {{ .Values.replicas }}
   # We dont need a large deployment history limit as Helm keeps it's own

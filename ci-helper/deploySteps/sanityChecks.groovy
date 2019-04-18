@@ -9,7 +9,7 @@ def call(applicationName, applicationUrl) {
                 sanityCheckResult = sh (
                     script: """#!/bin/sh
                               sleep 90
-                              output=\$(curl -s -L -X GET https://hlc-category-assembler-service.dev.platform.mnscorp.net/health | jq -r '.status')
+                              output=\$(curl -s -L -X GET https://br-search-assembler-service.dev.platform.mnscorp.net/health | jq -r '.status')
                               echo \$output
                             """,
                     returnStdout: true ).trim()
