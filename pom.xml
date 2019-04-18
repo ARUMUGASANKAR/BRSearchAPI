@@ -45,6 +45,21 @@
             <artifactId>jackson-annotations</artifactId>
         </dependency>
         <dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_servlet</artifactId>
+			<version>0.0.23</version>
+		</dependency>
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_pushgateway</artifactId>
+			<version>0.0.23</version>
+		</dependency>
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_hotspot</artifactId>
+			<version>0.0.23</version>
+		</dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
@@ -81,52 +96,71 @@
         </dependency>
     </dependencies>
     <build>
-        <plugins>
+		<finalName>br-prodcutsearch-service</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <release>${java.version}</release>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <!-- update compiler plugin dependency on ASM for Java 11 compatibility -->
-                        <groupId>org.ow2.asm</groupId>
-                        <artifactId>asm</artifactId>
-                        <version>6.2</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <argLine>
-                        --illegal-access=permit
-                    </argLine>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <configuration>
-                    <argLine>
-                        --illegal-access=permit
-                    </argLine>
-                </configuration>
-            </plugin>
-            <!-- Added for JAVA 11 Support END -->
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<verbose>true</verbose>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<!-- update compiler plugin dependency on ASM for Java 11 compatibility -->
+						<groupId>org.ow2.asm</groupId>
+						<artifactId>asm</artifactId>
+						<version>6.2</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>
+						--illegal-access=permit
+					</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<configuration>
+					<argLine>
+						--illegal-access=permit
+					</argLine>
+				</configuration>
+			</plugin>
+			<!-- Added for JAVA 11 Support END -->
 
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.2.5.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
-        </plugins>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-    </build>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
 
 </project>
