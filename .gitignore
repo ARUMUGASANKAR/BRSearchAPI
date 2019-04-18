@@ -2,25 +2,29 @@ HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
-.apt_generated
+# IDE working files
+*.iws
+*.ipr
+*.iml
+.idea/
+.settings
+.project
 .classpath
 .factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+#jmeter results
+.jtl
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-/build/
+# Build directories
+target/
+
+# Build and test files
+*.log*
+*.lck
+
+# OS generated files
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+bin/*
